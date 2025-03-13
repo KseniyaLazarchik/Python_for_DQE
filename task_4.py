@@ -2,6 +2,7 @@
 import random
 import string
 from collections import defaultdict
+import re
 
 
 def generate_random_dicts():
@@ -97,8 +98,11 @@ def text_normalize(text):
     """Normalize the text: handle case normalization and fix extra spaces."""
 
     if isinstance(text, str):
-        # Replace newlines with spaces, fix extra spaces, and normalize to lowercase
-        text_normal = text.replace('\n', ' ').replace('  ', ' ').lower()
+        # Replace newline characters with spaces and adjust spacing around quotes
+        text_normal = text.replace('\n', ' ').replace('“', ' “')
+
+        # Remove extra whitespace and lowercase everything
+        text_normal = ' '.join(text_normal.split()).lower()
 
         # Split sentences by period followed by a space
         sentences_split = text_normal.split('. ')
@@ -125,17 +129,8 @@ def fix_misspelling(text):
     # First normalize the text using text_normalize
     normalized_text = text_normalize(text)
 
-    # List of replacements to correct "iz" to "is"
-    replacements = [
-        (' iz ', ' is '),
-        ('“iz”', '“is”'),
-        ('"iz"', '"is"')
-    ]
-
-    # Apply replacements for each case of misspelling
-    result = normalized_text
-    for old, new in replacements:
-        result = result.replace(old, new)
+    # Fix “is” surrounded by spaces or placed in start or end of sentence
+    result = re.sub(r'(?<=\s)iz(?=\s)', 'is', text_normalize(text))
 
     return result
 
@@ -165,4 +160,3 @@ print(text_normalize(text))
 print(new_text_with_sentence(text))
 # Fix iz to is
 print(fix_misspelling(text))
-
