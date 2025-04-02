@@ -58,10 +58,11 @@ def create_common_dict(dict_list):
 
 
 # Generate a list of random number of dictionaries
-print(f"Generated List of Dictionaries: {generate_random_dicts()}")
+list_of_dict = generate_random_dicts()
+print(f"Generated List of Dictionaries: {list_of_dict}")
 
 # Create a common dictionary from a list of dictionaries
-print(f"Common Dictionary: {create_common_dict(generate_random_dicts())}")
+print(f"Common Dictionary: {create_common_dict(list_of_dict)}")
 
 
 # Functions for task 3
@@ -82,12 +83,13 @@ def create_new_sentence(text):
     # Empty list
     last_words = []
 
-    # Take the last word from sentence
-    sentences_split = text.split('. ')
+    # Split text into sentences using regex to handle different sentence endings
+    sentences_split = re.split(r'(?<=[.!?])\s+', text.strip())
+
     for sentence in sentences_split:
         words = sentence.split()
         if words:
-            last_words.append(words[-1])
+            last_words.append(words[-1].strip('.'))
 
     # Create the new sentence from the last words and capitalize it
     sentence_new = ' '.join(last_words).capitalize()
