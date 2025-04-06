@@ -85,3 +85,18 @@ News
 Date: 2025-03-25 23:35:34
 City: Minsk
 AI-driven phishing scams exploded last year. The trend continues in 2025
+
+News
+Date: 2025-04-02 22:42:12
+City: Washington
+New photos from mars show nasa rover has holes in its wheels.
+
+Private Ad
+Date: 2025-04-02 22:42:12 | Expiration: 2025-12-31 | 272 days left
+This is an ad.
+
+Nickname: John_smith
+Date: 2025-04-02 22:42:12
+This is a sample comment is it working?
+Words count: 8
+
