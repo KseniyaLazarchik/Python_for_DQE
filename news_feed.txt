@@ -85,7 +85,6 @@ News
 Date: 2025-03-25 23:35:34
 City: Minsk
 AI-driven phishing scams exploded last year. The trend continues in 2025
-
 News
 Date: 2025-04-02 22:42:12
 City: Washington
@@ -99,3 +98,18 @@ Nickname: John_smith
 Date: 2025-04-02 22:42:12
 This is a sample comment is it working?
 Words count: 8
+
+News
+Date: 2025-04-06 20:52:16
+City: Warshawa
+Replacing my windows laptop with an android tablet was surprisingly painless.
+
+Private Ad
+Date: 2025-04-06 20:52:16 | Expiration: 2025-06-06 | 60 days left
+This is an ad2.
+
+Nickname: Blablabla
+Date: 2025-04-06 20:52:16
+This is a new sample comment.
+Words count: 6
+
