@@ -1,11 +1,14 @@
 import sqlite3
 
+
 def fetch_data_from_db(db_name):
+    connection = None
+
     try:
         connection = sqlite3.connect(db_name)
         cursor = connection.cursor()
 
-        cursor.execute("SELECT * FROM News;")
+        cursor.execute("SELECT * FROM city_coordinates;")
 
         records = cursor.fetchall()
 
@@ -20,4 +23,4 @@ def fetch_data_from_db(db_name):
             connection.close()
 
 
-fetch_data_from_db('records.db')
+fetch_data_from_db('cities.db')
